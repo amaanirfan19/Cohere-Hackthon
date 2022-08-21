@@ -1,0 +1,49 @@
+html {
+  font-family: "roboto", arial, helvetica;
+}
+
+.app-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background-image: url("background.png");
+}
+
+h1 {
+  color: #fff;
+  font-size: 7rem;
+}
+
+h1 span {
+  color: #e28bd7;
+}
+
+.shadow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  position: relative;
+  width: 902px;
+  height: 1038px;
+  background: rgb(0, 0, 0);
+  opacity: 0.88;
+}
+
+#input {
+  display: flex;
+  justify-content: center;
+  text-align:center;
+  align-items: center;
+  background-color: white;
+  color: rgba(0, 0, 0, 0.823);
+  border-radius: 100px;
+  width: 574px;
+  height: 137px;
+}

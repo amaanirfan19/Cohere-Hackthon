@@ -64,11 +64,14 @@ h1 span {
   margin-right: auto;
 }
 .prompt-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   width: 60%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 24px;
-  margin-bottom: 32px;
+  margin-bottom: 50px;
 }
 
 .prompt-title {
@@ -88,6 +91,7 @@ h1 span {
 
 .category-container {
   padding-top: 32px;
+  margin-bottom: 40px;
 }
 
 .category-title {
@@ -138,4 +142,21 @@ h1 span {
 }
 .footer-link {
   color: #fff;
+}
+
+.prompts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 20px;
+}
+
+.prompts ul li {
+  color: #000000b2;
+  font-weight: bold;
+}
+
+.listitems {
+  padding: 16px, 16px, 16px, 16px;
 }

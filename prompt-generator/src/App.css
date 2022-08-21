@@ -1,18 +1,24 @@
 html {
   font-family: "roboto", arial, helvetica;
 }
+body {
+  margin: 0px;
+}
 
 .app-container {
+  /*
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
   position: absolute;
+  
   left: 0;
   right: 0;
   bottom: 0;
   top: 0;
-  background-image: url("background.png");
+  */
+  
 }
 
 h1 {
@@ -39,11 +45,115 @@ h1 span {
 #input {
   display: flex;
   justify-content: center;
-  text-align:center;
+  margin-left: auto;
+  margin-right: auto;
   align-items: center;
   background-color: white;
   color: rgba(0, 0, 0, 0.823);
-  border-radius: 100px;
-  width: 574px;
-  height: 137px;
+  border-radius: 40px;
+  width: 400px;
+  height: 80pxpx;
+}
+
+.navbar-container{
+  width: 100%;
+  background-color:#000;
+  margin-top: 0px;
+}
+
+.nav-text{
+  padding: 16px 16px 16px;
+  font-size: 18px;
+  color:#fff;
+  font-weight: bold;
+}
+.banner-container{
+  padding-top: 64px;
+  padding-bottom: 64px;
+  background-image: url("background.png");
+}
+
+.banner-text-container{
+  width: 60%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.prompt-container{
+  
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 24px ;
+  margin-bottom: 32px;
+}
+
+.prompt-title{
+  font-size: 24px;
+  text-align: center;
+  padding: 16px 16px 16px 16px;
+}
+
+.prompt-feild{
+  width: auto;
+  align-items: center;
+  padding-top: 16px ;
+  padding-bottom: 16px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.category-container{
+  padding-top: 32px;
+}
+
+.category-title{
+  text-align: center;
+  font-size: 24px;
+  padding-top: 32px;
+  padding-bottom: 16px;
+}
+.categories{
+  width: 100%;
+  display: flex;
+
+}
+
+.cardHolder{
+  display: block;
+  width: 33%;
+  margin-left: 16px;
+  margin-right: 16px;
+}
+.category-card {
+  
+  height: 400px;
+  background-size: cover;              
+    background-repeat:   no-repeat;
+    background-position: center center;
+}
+
+.category1{
+  background-image: url("cat1.png");
+}
+
+.category2{
+  background-image: url("cat2.png");
+}
+.category3{
+  background-image: url("cat3.png");
+}
+
+.category-name{
+  text-align: center;
+  padding-top: 24px;
+}
+
+.category-link{
+font-weight: bold;
+color: #000;
+text-decoration: none;
+}
+.footer-link{
+  color: #fff;
 }

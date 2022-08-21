@@ -1,11 +1,26 @@
 import React, { useState } from "react";
-import { TextField } from "@mui/material";
+import { TextField, Container, Button } from "@mui/material";
+import "./Reset.css"
 import "./App.css";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 const App = () => {
   const [result, setResult] = useState([]);
 
-  const generatePrompt = () => {
-    fetch("/generate").then((response) =>
+  const generatePrompt = (category_type) => {
+    fetch("/generate", {
+      // Adding method type
+      method: "POST",
+      mode: "cors",
+
+      // Adding body or contents to send
+      body: category_type,
+
+      // Adding headers to the request
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    }).then((response) =>
       response.json().then((data) => {
         console.log(data);
         setResult(data.text);
@@ -15,19 +30,44 @@ const App = () => {
 
   return (
     <div className="app-container">
-      <div className="shadow">
-        <h1>
-          Imag<span>INE</span> Art
-        </h1>
-        <TextField
-          id="input"
-          placeholder="e.g Mona Lisa crying"
-          InputProps={{ style: { fontSize: 35 } }}
-          InputLabelProps={{ style: { fontSize: 30 } }}
-        />
-        {/* <button onClick={generatePrompt}> Generate Prompt</button> */}
-        {result.length > 0 ? result : null}
+      <Navbar />
+      <div className="banner-container">
+        <div className="banner-text-container">
+          <h1>Generate drawing prompts with ImagINE Art</h1>
+        </div>
       </div>
+     
+      <div className="prompt-container">
+        <p className="prompt-title">Enter your prompt below or select a category</p>
+         <div className="prompt-feild">
+          <TextField
+            id="input"
+            placeholder="e.g Mona Lisa crying"
+            InputProps={{ style: { fontSize: 24 } }}
+            InputLabelProps={{ style: { fontSize: 30 } }} />
+         </div>
+         <Button>Generate prompt</Button>
+          {/* <button onClick={generatePrompt}> Generate Prompt</button> */}
+          {result.length > 0 ? result : null}
+          <div className="category-container">
+            <p className="category-title">Categories</p>
+            <div className="categories">
+              <a className="cardHolder category-link" href="#" onClick={generatePrompt('locations')}>
+                <div className="category-card category1"></div>
+                <p className="category-name">Scenes</p>
+              </a>
+              <a className="cardHolder category-link" href="#">
+              <div className="category-card category2"></div>
+                <p className="category-name">Characters</p>
+              </a>
+              <a className="cardHolder category-link" href="#">
+                <div className="category-card category3"></div>
+                <p className="category-name">Animals</p>
+              </a>
+            </div>
+          </div>
+        </div>
+        <Footer />
     </div>
   );
 };

@@ -7,8 +7,20 @@ import Footer from "./components/Footer";
 const App = () => {
   const [result, setResult] = useState([]);
 
-  const generatePrompt = () => {
-    fetch("/generate").then((response) =>
+  const generatePrompt = (category_type) => {
+    fetch("/generate", {
+      // Adding method type
+      method: "POST",
+      mode: "cors",
+
+      // Adding body or contents to send
+      body: category_type,
+
+      // Adding headers to the request
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    }).then((response) =>
       response.json().then((data) => {
         console.log(data);
         setResult(data.text);
@@ -40,7 +52,7 @@ const App = () => {
           <div className="category-container">
             <p className="category-title">Categories</p>
             <div className="categories">
-              <a className="cardHolder category-link" href="#">
+              <a className="cardHolder category-link" href="#" onClick={generatePrompt('locations')}>
                 <div className="category-card category1"></div>
                 <p className="category-name">Scenes</p>
               </a>
